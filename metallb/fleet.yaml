@@ -1,5 +1,4 @@
-defaultNamespace: default
-namespace: default
+defaultNamespace: metallb-system
 
 namespaceLabels:
   app: metallb
