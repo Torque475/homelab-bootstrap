@@ -1,17 +1,6 @@
 # Namespace where MetalLB is deployed
 namespace: metallb-system
 
-# Layer 2 configuration
-configInline:
-  address-pools:
-    - name: default
-      protocol: layer2
-      addresses:
-        - 10.1.5.150-10.1.5.200  # Specify the range of IPs you want MetalLB to manage
-
-
-
-
 labels:
   pod-security.kubernetes.io/enforce: privileged
   pod-security.kubernetes.io/audit: privileged
