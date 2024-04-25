@@ -1,21 +1,22 @@
----
-apiVersion: metallb.io/v1beta1
-kind: IPAddressPool
-metadata:
-  name: default-ip-pool
-  namespace: metallb-system
-spec:
-  addresses:
-  - 10.1.5.192/26
----
-apiVersion: metallb.io/v1beta1
-kind: L2Advertisement
-metadata:
-  name: default-l2
-  namespace: metallb-system
-spec:
-  ipAddressPools:
-  - default-ip-pool
+## Already applied
+# ---
+# apiVersion: metallb.io/v1beta1
+# kind: IPAddressPool
+# metadata:
+#   name: default-ip-pool
+#   namespace: metallb-system
+# spec:
+#   addresses:
+#   - 10.1.5.192/26
+# ---
+# apiVersion: metallb.io/v1beta1
+# kind: L2Advertisement
+# metadata:
+#   name: default-l2
+#   namespace: metallb-system
+# spec:
+#   ipAddressPools:
+#   - default-ip-pool
   #nodeSelectors:
   #- matchLabels:
   #    kubernetes.io/hostname: NodeA
