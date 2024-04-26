@@ -23,13 +23,13 @@ persistence:
   storageClass: ""  # If blank, default storage class will be used
 
 # Ingress settings (commented out by default)
-ingress:
-  enabled: true
-  annotations: {}
-  hosts:
-    - host: portainer.homelab.com
-      paths: ["/"]
-  tls: []
+# ingress:
+#   enabled: true
+#   annotations: {}
+#   hosts:
+#     - host: portainer.homelab.com
+#       paths: ["/"]
+#   tls: []
 
 # # Resource limits and requests
 # resources:
