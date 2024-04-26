@@ -1,17 +1,20 @@
-defaultNamespace: portainer
+# Can Only mange the local kube cluster or other external instances, can't run docker inside of the kube cluster :(
 
 
-namespaceLabels:
-  app: portainer
-namespaceAnnotations:
-  app: portainer
-
-helm:
-  chart: portainer
-  repo: https://portainer.github.io/k8s/
-  version: 1.0.51
-
-  valuesFiles:
-    - "portainer-values.yaml"
-
-  releaseName: portainer
+# defaultNamespace: portainer
+# 
+# 
+# namespaceLabels:
+#   app: portainer
+# namespaceAnnotations:
+#   app: portainer
+# 
+# helm:
+#   chart: portainer
+#   repo: https://portainer.github.io/k8s/
+#   version: 1.0.51
+# 
+#   valuesFiles:
+#     - "portainer-values.yaml"
+# 
+#   releaseName: portainer
