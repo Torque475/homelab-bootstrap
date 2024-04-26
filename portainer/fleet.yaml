@@ -1,5 +1,5 @@
 defaultNamespace: portainer
-namespace: portainer
+
 
 namespaceLabels:
   app: portainer
