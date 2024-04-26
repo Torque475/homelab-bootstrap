@@ -1,0 +1,17 @@
+defaultNamespace: portainer
+namespace: portainer
+
+namespaceLabels:
+  app: portainer
+namespaceAnnotations:
+  app: portainer
+
+helm:
+  chart: portainer
+  repo: https://portainer.github.io/k8s/
+  version: 1.0.51
+
+  valuesFiles:
+    - "portainer-values.yaml"
+
+  releaseName: portainer

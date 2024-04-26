@@ -1,0 +1,47 @@
+# Values for the config. Not a config map
+#Mostly mapping defaults, mostly to track them
+
+# Namespace where Portainer is deployed
+namespace: portainer
+
+# Portainer version to be used
+image:
+  repository: portainer/portainer-ce
+  tag: latest
+  pullPolicy: IfNotPresent
+
+# Service settings
+service:
+  type: LoadBalancer
+  port: 9000
+  
+# Persistence settings
+persistence:
+  enabled: true
+  accessMode: ReadWriteOnce
+  size: 20Gi
+  storageClass: ""  # If blank, default storage class will be used
+
+# Ingress settings (commented out by default)
+ingress:
+  enabled: true
+  annotations: {}
+  hosts:
+    - host: portainer.homelab.com
+      paths: ["/"]
+  tls: []
+
+# # Resource limits and requests
+# resources:
+#   limits:
+#     cpu: "500m"
+#     memory: "500Mi"
+#   requests:
+#     cpu: "250m"
+#     memory: "250Mi"
+# 
+# # Additional security settings and configurations
+# securityContext:
+#   runAsUser: 1000
+#   runAsGroup: 1000
+#   fsGroup: 1000
