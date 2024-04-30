@@ -1,5 +1,7 @@
 service:
   main:
+    type: LoadBalancer
+    loadBalancerIP: 10.1.5.200
     ports:
       main:
         protocol: http
