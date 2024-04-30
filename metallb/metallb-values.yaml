@@ -1,7 +1,7 @@
 # Namespace where MetalLB is deployed
 namespace: metallb-system
 
-labels:
-  pod-security.kubernetes.io/enforce: privileged
-  pod-security.kubernetes.io/audit: privileged
-  pod-security.kubernetes.io/warn: privileged
+# labels:
+#   pod-security.kubernetes.io/enforce: privileged
+#   pod-security.kubernetes.io/audit: privileged
+#   pod-security.kubernetes.io/warn: privileged

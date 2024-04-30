@@ -14,4 +14,17 @@ helm:
   valuesFiles:
     - "metallb-values.yaml"
 
-  
+
+#Tell it to ignore minor modifications
+  diff:
+    comparePatches: 
+    - apiVersion: "apiextensions.k8s.io/v1"
+      kind: CustomResourceDefinition
+      name: bgppeers.metallb.io
+      operations:
+      - {"op":"remove", "path":"//spec/conversion/webhook/clientConfig/caBundle"}
+    - apiVersion: "apiextensions.k8s.io/v1"
+      kind: CustomResourceDefinition
+      name: addresspools.metallb.io
+      operations:
+      - {"op":"remove", "path":"//spec/conversion/webhook/clientConfig/caBundle"}
