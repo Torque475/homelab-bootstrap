@@ -1,0 +1,32 @@
+service:
+  main:
+    ports:
+      main:
+        protocol: http
+        port: 32400
+        targetPort: 32400
+persistence:
+  config:
+    enabled: true
+    type: nfs
+    mountPath: "/config"
+    path: /mnt/nvmes/Apps/App_Configs/qbit_config
+    server: 10.1.5.11
+  plex-media:
+    enabled: true
+    type: nfs
+    path: /mnt/hdd_array/nas/plex-media
+    mountPath: /nas/plex-media
+    server: 10.1.5.11
+  transcode:
+    enabled: true
+    mountPath: "/transcode"
+    type: emptyDir
+    medium: Memory
+    targetSelectAll: true
+plex:
+  # User Defined
+  serverIP: "127.0.0.1"
+  additionalAdvertiseURL: ""
+  disableGDM: true
+  requireHTTPS: false

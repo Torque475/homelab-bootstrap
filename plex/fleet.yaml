@@ -1,0 +1,25 @@
+defaultNamespace: plex
+
+namespaceLabels:
+  app: plex
+namespaceAnnotations:
+  app: plex
+
+helm:
+  releaseName: plex
+  chart: oci://tccr.io/truecharts/plex
+  version: 18.0.4
+
+  valuesFiles:
+    - "plex-values.yaml"
+
+# I hope I don't need this again
+#diff:
+#  comparePatches:
+#    - apiVersion: apps/v1
+#      kind: Deployment
+#      name: qbit-qbittorrent
+#      namespace: qbit
+#      operations:
+#        - op: remove
+#          path: /spec/template/spec/hostUsers
