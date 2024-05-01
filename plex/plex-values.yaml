@@ -12,7 +12,7 @@ persistence:
     enabled: true
     type: nfs
     mountPath: "/config"
-    path: /mnt/nvmes/Apps/App_Configs/qbit_config
+    path: /mnt/nvmes/Apps/App_Configs/plex_config
     server: 10.1.5.11
   plex-media:
     enabled: true
