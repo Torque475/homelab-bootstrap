@@ -28,7 +28,7 @@ persistence:
     targetSelectAll: true
 plex:
   # User Defined
-  serverIP: "10.1.5.200"
-  additionalAdvertiseURL: "plex.homelab.lan"
-  disableGDM: true
+  #serverIP: "10.1.5.200"
+  #additionalAdvertiseURL: ""
+  disableGDM: false
   requireHTTPS: false
