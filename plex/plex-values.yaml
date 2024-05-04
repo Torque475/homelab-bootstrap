@@ -29,6 +29,6 @@ persistence:
 plex:
   # User Defined
   serverIP: "127.0.0.1"
-  additionalAdvertiseURL: ""
+  additionalAdvertiseURL: "10.1.5.200"
   disableGDM: true
   requireHTTPS: false
