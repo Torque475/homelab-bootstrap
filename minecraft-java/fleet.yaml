@@ -1,0 +1,25 @@
+defaultNamespace: minecraft
+
+namespaceLabels:
+  app: minecraft
+namespaceAnnotations:
+  app: minecraft
+
+helm:
+  releaseName: minecraft-java
+  chart: oci://tccr.io/truecharts/minecraft-java
+  version: 10.1.8
+
+  valuesFiles:
+    - "minecraft-java-values.yaml"
+
+
+diff:
+  comparePatches:
+    - apiVersion: apps/v1
+      kind: Deployment
+      name: minecraft-java
+      namespace: minecraft
+      operations:
+        - op: remove
+          path: /spec/template/spec/hostUsers
