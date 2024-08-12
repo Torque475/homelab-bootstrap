@@ -191,14 +191,23 @@ persistence:
     targetSelector:
       main:
         main:
-          mountPath: /mnt/nvmes/Apps/game_servers_data/minecraft/data
+          type: nfs
+          server: 10.1.5.11
+          path: /mnt/nvmes/Apps/game_servers_data/minecraft/data
+          mountPath: /data
       mcbackup:
         mcbackup:
-          mountPath: /mnt/nvmes/Apps/game_servers_data/minecraft/data
+          type: nfs
+          server: 10.1.5.11
+          path: /mnt/nvmes/Apps/game_servers_data/minecraft/data
+          mountPath: /data
           readOnly: true
   backups:
     enabled: true
     targetSelector:
       mcbackup:
         mcbackup:
-          mountPath: /mnt/nvmes/Apps/game_servers_data/minecraft/backups
+          type: nfs
+          server: 10.1.5.11
+          path: /mnt/nvmes/Apps/game_servers_data/minecraft/backups
+          mountPath: /backups
