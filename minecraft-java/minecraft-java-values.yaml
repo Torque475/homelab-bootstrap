@@ -65,9 +65,9 @@ workload:
               command:
                 - mc-health
           env:
-            SERVER_PORT: "{{ .Values.service.main.ports.main.port }}"
-            QUERY_PORT: "{{ .Values.service.main.ports.query.port }}"
-            RCON_PORT: "{{ .Values.service.rcon.ports.rcon.port }}"
+            #SERVER_PORT: "{{ .Values.service.main.ports.main.port }}"
+            #QUERY_PORT: "{{ .Values.service.main.ports.query.port }}"
+            #RCON_PORT: "{{ .Values.service.rcon.ports.rcon.port }}"
             ENABLE_QUERY: "true"
             EULA: "TRUE"
             GUI: "FALSE"
@@ -90,7 +90,7 @@ workload:
             SPAWN_NPCS: true
             VIEW_DISTANCE: 16
             MODE: survival
-            MOTD: "Welcome to Minecraft on TrueNAS Scale!"
+            MOTD: "Welcome to Minecraft on Matt's Homelab!"
             PVP: false
             LEVEL_TYPE: DEFAULT
             LEVEL: world
@@ -201,4 +201,4 @@ persistence:
     targetSelector:
       mcbackup:
         mcbackup:
-          mountPath: /mnt/nvmes/Apps/game_servers_data/minecraft/data/backups
+          mountPath: /mnt/nvmes/Apps/game_servers_data/minecraft/backups
