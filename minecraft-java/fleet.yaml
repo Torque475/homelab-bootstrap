@@ -21,16 +21,12 @@ diff:
       name: minecraft-java
       namespace: minecraft
       operations:
-        - op: remove
-          path: /spec/template/spec/hostUsers
-        - op: remove
-          path: /spec/template/hostUsers
+        - {"op": "remove", "path": "/spec/template/spec/hostUsers"}
+        #- {"op": "remove", "path": "/spec/template/hostUsers"}
     - apiVersion: apps/v1
       kind: Deployment
       name: minecraft-java-mcbackup
       namespace: minecraft
       operations:
-        - op: remove
-          path: /spec/template/spec/hostUsers
-        - op: remove
-          path: /spec/template/hostUsers
+        - {"op": "remove", "path": "/spec/template/spec/hostUsers"}
+        #- {"op": "remove", "path": "/spec/template/hostUsers"}
