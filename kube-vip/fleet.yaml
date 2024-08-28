@@ -1,2 +1,2 @@
 #Empty file to create another resource bundle?
-#defaultNamespace: metallb-system
+defaultNamespace: kube-system
