@@ -71,7 +71,7 @@ workload:
             ENABLE_QUERY: "true"
             EULA: "TRUE"
             GUI: "FALSE"
-            OVERRIDE_SERVER_PROPERTIES: true
+            OVERRIDE_SERVER_PROPERTIES: false
             VERSION: "LATEST"
             TYPE: "VANILLA"
             DIFFICULTY: easy
@@ -130,7 +130,7 @@ workload:
             # USE_MODPACK_START_SCRIPT: true
             # FTB_LEGACYJAVAFIXER: false
             # WHITELIST: "willardbug, killbilljill, throwdownn64"
-            # OPS: ""
+            # OPS: "torque475, halflive8565"
             # ICON: ""
             SEED: "5063885805507972583"
             # GENERATOR_SETTINGS: ""
