@@ -52,17 +52,3 @@ workload:
               enabled: false
             startup:
               enabled: false
-
-
-  transcode:
-    enabled: true
-    mountPath: "/transcode"
-    type: emptyDir
-    medium: Memory
-    targetSelectAll: true
-plex:
-  # User Defined
-  serverIP: "10.1.5.200"
-  additionalAdvertiseURL: ""
-  disableGDM: true
-  requireHTTPS: false
