@@ -37,7 +37,7 @@ workload:
       containers:
         main:
           env:
-            ENABLE_BEPINEX: ""
+            ENABLE_BEPINEX: "false"
             GAME_ID: "1829350"
             GAME_PARAMS: ""
             PASSWRD: ""
