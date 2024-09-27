@@ -1,2 +1,3 @@
 #Empty file to create another resource bundle?
 defaultNamespace: kube-system
+# VIP advertized is 10.1.5.20

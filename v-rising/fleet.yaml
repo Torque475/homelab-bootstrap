@@ -1,0 +1,25 @@
+defaultNamespace: v-rising-server
+
+namespaceLabels:
+  app: v-rising-server
+namespaceAnnotations:
+  app: v-rising-server
+
+helm:
+  releaseName: v-rising-server
+  chart: oci://tccr.io/truecharts/v-rising
+  version: 7.1.7
+
+  valuesFiles:
+    - "v-rising-values.yaml"
+
+# I hope I don't need this again
+diff:
+  comparePatches:
+    - apiVersion: apps/v1
+      kind: Deployment
+      name: v-rising-server
+      namespace: v-rising-server
+      operations:
+        - op: remove
+          path: /spec/template/spec/hostUsers

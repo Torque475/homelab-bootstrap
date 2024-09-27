@@ -1,0 +1,68 @@
+service:
+  main:
+    type: LoadBalancer
+    loadBalancerIP: 10.1.5.201
+    ports:
+      main:
+        protocol: udp
+        port: 9876
+        targetPort: 976
+  query:
+    type: LoadBalancer
+    loadBalancerIP: 10.1.5.201
+    enabled: true
+    ports:
+      query:
+        enabled: true
+        port: 9877
+        protocol: udp
+        targetPort: 9877
+persistence:
+  serverfiles:
+    enabled: true
+    type: nfs
+    mountPath: /serverdata/serverfiles
+    path: /mnt/nvmes/Apps/game_servers_data/v-rising/serverdata/serverfiles
+    server: 10.1.5.11
+  plex-media:
+    enabled: true
+    type: nfs
+    path: /serverdata/steamcmd
+    mountPath: /mnt/nvmes/Apps/game_servers_data/v-rising/serverdata/steamcmd
+    server: 10.1.5.11
+
+workload:
+  main:
+    podSpec:
+      containers:
+        main:
+          env:
+            ENABLE_BEPINEX: ""
+            GAME_ID: "1829350"
+            GAME_PARAMS: ""
+            PASSWRD: ""
+            SERVER_NAME: V Rising Blood and Iron
+            USERNAME: ""
+            VALIDATE: "false"
+            WORLD_NAME: world1
+          probes:
+            liveness:
+              enabled: false
+            readiness:
+              enabled: false
+            startup:
+              enabled: false
+
+
+  transcode:
+    enabled: true
+    mountPath: "/transcode"
+    type: emptyDir
+    medium: Memory
+    targetSelectAll: true
+plex:
+  # User Defined
+  serverIP: "10.1.5.200"
+  additionalAdvertiseURL: ""
+  disableGDM: true
+  requireHTTPS: false
