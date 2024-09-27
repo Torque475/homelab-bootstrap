@@ -23,7 +23,6 @@ persistence:
     type: nfs
     mountPath: /serverdata/serverfiles
     path: /mnt/nvmes/Apps/game_servers_data/v-rising/serverdata/serverfiles
-                          game_servers_data\v-rising\serverdata\serverfiles
     server: 10.1.5.11
   steamcmd:
     enabled: true
