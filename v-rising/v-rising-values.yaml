@@ -5,8 +5,8 @@ service:
     ports:
       main:
         protocol: udp
-        port: 9876
-        targetPort: 976
+        port: 19876
+        targetPort: 19876
   query:
     type: LoadBalancer
     loadBalancerIP: 10.1.5.201
@@ -14,9 +14,9 @@ service:
     ports:
       query:
         enabled: true
-        port: 9877
+        port: 19877
         protocol: udp
-        targetPort: 9877
+        targetPort: 19877
 persistence:
   serverfiles:
     enabled: true
@@ -37,14 +37,33 @@ workload:
       containers:
         main:
           env:
+            #Steam settings
             ENABLE_BEPINEX: "false"
             GAME_ID: "1829350"
             GAME_PARAMS: ""
             PASSWRD: ""
-            SERVER_NAME: V Rising Blood and Iron
             USERNAME: ""
             VALIDATE: "false"
-            WORLD_NAME: world1
+            #V Rising settings
+            VR_SERVER_NAME: "V Rising Blood and Iron"
+            VR_DESCRIPTION: "Blood and Iron!"
+            WORLD_NAME: "world1"
+            VR_GAME_PORT: 19876
+            VR_QUERY_PORT: 19877
+            VR_FPS: 120
+            VR_LOWER_FPS_WHEN_EMPTY: true
+            VR_LOWER_FPS_WHEN_EMPTY_VALUE: 5
+            VR_PASSWORD: Sephi101ForLife!
+            VR_LIST_ON_EOS: false
+            VR_LIST_ON_STEAM: false
+
+            #Game Setting Presets, with added overrides later:
+            VR_PRESET: "StandardPvE"
+            VR_DIFFICULTY_PRESET: Difficulty_Normal
+            VR_SAVE_COUNT: 100
+            VR_SAVE_INTERVAL: 60
+            VR_AUTOSAVESMARTKEEP: 10:10:1,20:2:1,30:4:1,60:2:1,120:2:1,240:2:1,480:2:1,960:2:1,1440:3:2,2880:1:1,4320:1:1,5760:0:1,7200:0:1,8640:0:1,10080:0:1,11520:0:1,12960:0:1,14400:0:1,201600:14:1
+
           probes:
             liveness:
               enabled: false
