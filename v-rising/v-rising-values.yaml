@@ -57,9 +57,9 @@ workload:
             VR_LIST_ON_EOS: false
             VR_LIST_ON_STEAM: false
 
-            #Game Setting Presets, with added overrides later:
-            VR_PRESET: "StandardPvE"
-            VR_DIFFICULTY_PRESET: Difficulty_Normal
+            #Game Setting Presets, with added overrides later: Added overrides didn't work
+            #VR_PRESET: "StandardPvE"
+            #VR_DIFFICULTY_PRESET: Difficulty_Normal
             VR_SAVE_COUNT: 100
             VR_SAVE_INTERVAL: 60
             VR_AUTOSAVESMARTKEEP: 10:10:1,20:2:1,30:4:1,60:2:1,120:2:1,240:2:1,480:2:1,960:2:1,1440:3:2,2880:1:1,4320:1:1,5760:0:1,7200:0:1,8640:0:1,10080:0:1,11520:0:1,12960:0:1,14400:0:1,201600:14:1
