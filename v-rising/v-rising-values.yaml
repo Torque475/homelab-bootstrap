@@ -45,7 +45,7 @@ workload:
             USERNAME: ""
             VALIDATE: "false"
             #V Rising settings
-            VR_SERVER_NAME: "V Rising Blood and Iron"
+            SERVER_NAME: "V Rising Blood and Iron"
             VR_DESCRIPTION: "Blood and Iron!"
             WORLD_NAME: "world1"
             VR_GAME_PORT: 19876
