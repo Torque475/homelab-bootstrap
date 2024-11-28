@@ -1,0 +1,50 @@
+securityContext:
+  container:
+    readOnlyRootFilesystem: false
+    runAsNonRoot: false
+    runAsGroup: 0
+    runAsUser: 0
+
+service:
+  main:
+    type: LoadBalancer
+    loadBalancerIP: 10.1.5.202
+    ports:
+      main:
+        protocol: udp
+        port: 34197
+  rcon:
+    type: LoadBalancer
+    loadBalancerIP: 10.1.5.202
+    enabled: true
+    ports:
+      rcon:
+        enabled: true
+        port: 27015
+        protocol: tcp
+
+workload:
+  main:
+    podSpec:
+      containers:
+        main:
+          env:
+            GENERATE_NEW_SAVE: false
+            LOAD_LATEST_SAVE: true
+            SAVE_NAME: "_autosave1"
+            TOKEN: ""
+            UPDATE_MODS_ON_START: ""
+            USERNAME: ""
+            DLC_SPACE_AGE: false
+
+persistence:
+  config:
+    enabled: true
+    mountPath: /factorio
+    type: nfs
+    path: /mnt/nvmes/Apps/game_servers_data/factorio
+    server: 10.1.5.11
+
+portal:
+  open:
+    enabled: false

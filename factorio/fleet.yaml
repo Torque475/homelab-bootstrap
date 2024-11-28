@@ -1,0 +1,25 @@
+defaultNamespace: factorio
+
+namespaceLabels:
+  app: factorio
+namespaceAnnotations:
+  app: factorio
+
+helm:
+  releaseName: factorio
+  chart: oci://tccr.io/truecharts/factorio
+  version: 9.2.27
+
+  valuesFiles:
+    - "factorio-values.yaml"
+
+# I hope I don't need this again
+diff:
+  comparePatches:
+    - apiVersion: apps/v1
+      kind: Deployment
+      name: factorio
+      namespace: factorio
+      operations:
+        - op: remove
+          path: /spec/template/spec/hostUsers
